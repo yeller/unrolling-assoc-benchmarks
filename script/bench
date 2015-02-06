@@ -1,0 +1,18 @@
+#!/bin/bash
+
+set -e
+lein trampoline run -m bench-assoc-unrolling bench-single-assoc
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-unrolled
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-unrolled
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-unrolled
+
+lein trampoline run -m bench-assoc-unrolling bench-single-assoc-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-unrolled-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-unrolled-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-unrolled-persistent-hash-map
