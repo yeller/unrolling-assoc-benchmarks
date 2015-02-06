@@ -49,7 +49,7 @@
 
 (def persistent-hash-map
   (into {}
-        (map vec (range 20) (range 20))))
+        (map vector (range 20) (range 20))))
 
 (defn bench-single-assoc-persistent-hash-map
   (bench
