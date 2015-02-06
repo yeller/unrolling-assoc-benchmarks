@@ -51,26 +51,26 @@
   (into {}
         (map vector (range 20) (range 20))))
 
-(defn bench-single-assoc-persistent-hash-map
+(defn bench-single-assoc-persistent-hash-map []
   (bench
     (assoc persistent-hash-map
            :a-key 1)))
 
 
-(defn bench-two-key-assoc-persistent-hashmap []
+(defn bench-two-key-assoc-persistent-hash-map []
   (bench
     (assoc persistent-hash-map
            :a-key 1
            :b-key 2)))
 
-(defn bench-three-key-assoc-persistent-hashmap []
+(defn bench-three-key-assoc-persistent-hash-map []
   (bench
     (assoc persistent-hash-map
            :a-key 1
            :b-key 2
            :c-key 3)))
 
-(defn bench-four-key-assoc-persistent-hashmap []
+(defn bench-four-key-assoc-persistent-hash-map []
   (bench
     (assoc persistent-hash-map
            :a-key 1
@@ -78,20 +78,20 @@
            :c-key 3
            :d-key 4)))
 
-(defn bench-two-key-assoc-unrolled-persistent-hashmap []
+(defn bench-two-key-assoc-unrolled-persistent-hash-map []
   (bench
     (-> persistent-hash-map
       (assoc :a-key 1)
       (assoc :b-key 2))))
 
-(defn bench-three-key-assoc-unrolled-persistent-hashmap []
+(defn bench-three-key-assoc-unrolled-persistent-hash-map []
   (bench
     (-> persistent-hash-map
       (assoc :a-key 1)
       (assoc :b-key 2)
       (assoc :c-key 3))))
 
-(defn bench-four-key-assoc-unrolled-persistent-hashmap []
+(defn bench-four-key-assoc-unrolled-persistent-hash-map []
   (bench
     (-> persistent-hash-map
       (assoc :a-key 1)
