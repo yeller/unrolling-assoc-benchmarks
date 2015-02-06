@@ -121,4 +121,5 @@
 (defn -main [& args]
   (let [bench (get benches (first args))]
     (assert bench "not a valid bench")
+    (println (str "runnning " (first args) "\n============"))
     (bench)))
