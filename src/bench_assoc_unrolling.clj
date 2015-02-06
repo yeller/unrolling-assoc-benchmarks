@@ -99,6 +99,57 @@
       (assoc :c-key 3)
       (assoc :d-key 4))))
 
+(defrecord AnRecord [a-key b-key c-key d-key])
+
+(def a-record (->AnRecord 1 2 3 4))
+
+(defn bench-single-assoc-record []
+  (bench
+    (assoc a-record
+           :a-key 1)))
+
+
+(defn bench-two-key-assoc-record []
+  (bench
+    (assoc a-record
+           :a-key 1
+           :b-key 2)))
+
+(defn bench-three-key-assoc-record []
+  (bench
+    (assoc a-record
+           :a-key 1
+           :b-key 2
+           :c-key 3)))
+
+(defn bench-four-key-assoc-record []
+  (bench
+    (assoc a-record
+           :a-key 1
+           :b-key 2
+           :c-key 3
+           :d-key 4)))
+
+(defn bench-two-key-assoc-unrolled-record []
+  (bench
+    (-> a-record
+      (assoc :a-key 1)
+      (assoc :b-key 2))))
+
+(defn bench-three-key-assoc-unrolled-record []
+  (bench
+    (-> a-record
+      (assoc :a-key 1)
+      (assoc :b-key 2)
+      (assoc :c-key 3))))
+
+(defn bench-four-key-assoc-unrolled-record []
+  (bench
+    (-> a-record
+      (assoc :a-key 1)
+      (assoc :b-key 2)
+      (assoc :c-key 3)
+      (assoc :d-key 4))))
 
 (def benches
   {
@@ -116,6 +167,13 @@
    "bench-two-key-assoc-unrolled-persistent-hash-map" bench-two-key-assoc-unrolled-persistent-hash-map
    "bench-three-key-assoc-unrolled-persistent-hash-map" bench-three-key-assoc-unrolled-persistent-hash-map
    "bench-four-key-assoc-unrolled-persistent-hash-map" bench-four-key-assoc-unrolled-persistent-hash-map
+   "bench-single-assoc-record" bench-single-assoc-record
+   "bench-two-key-assoc-record" bench-two-key-assoc-record
+   "bench-three-key-assoc-record" bench-three-key-assoc-record
+   "bench-four-key-assoc-record" bench-four-key-assoc-record
+   "bench-two-key-assoc-unrolled-record" bench-two-key-assoc-unrolled-record
+   "bench-three-key-assoc-unrolled-record" bench-three-key-assoc-unrolled-record
+   "bench-four-key-assoc-unrolled-record" bench-four-key-assoc-unrolled-record
    })
 
 (defn -main [& args]

@@ -16,3 +16,10 @@ lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-persistent-has
 lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-unrolled-persistent-hash-map
 lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-unrolled-persistent-hash-map
 lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-unrolled-persistent-hash-map
+lein trampoline run -m bench-assoc-unrolling bench-single-assoc-record
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-record
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-record
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-record
+lein trampoline run -m bench-assoc-unrolling bench-two-key-assoc-unrolled-record
+lein trampoline run -m bench-assoc-unrolling bench-three-key-assoc-unrolled-record
+lein trampoline run -m bench-assoc-unrolling bench-four-key-assoc-unrolled-record
