@@ -1,6 +1,9 @@
 (ns bench-conj-unrolling
   (:require [criterium.core :refer [bench]]))
 
+(defmacro bench [& args]
+  `(criterium.core/bench ~@args))
+
 (defn bench-single-empty-vector-conj []
   (bench
     (conj [] 1)))

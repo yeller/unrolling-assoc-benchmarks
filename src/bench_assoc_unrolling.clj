@@ -1,6 +1,9 @@
 (ns bench-assoc-unrolling
   (:require [criterium.core :refer [bench]]))
 
+(defmacro bench [& args]
+  `(criterium.core/bench ~@args))
+
 (defn bench-single-assoc []
   (bench
     (assoc {} :a-key 1)))
