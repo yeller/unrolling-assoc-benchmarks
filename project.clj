@@ -4,5 +4,5 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :jvm-opts ^:replace ["-server" "-Xmx1g" "-Xms1g" "-XX:+AggressiveOpts" "-XX:+UseFastAccessorMethods"]
-  :dependencies [[org.clojure/clojure "1.6.0"]
+  :dependencies [[com.yellerapp/clojure-unrolled-assoc "1.7.0-unrollassoc-SNAPSHOT"]
                  [criterium "0.4.1"]])
